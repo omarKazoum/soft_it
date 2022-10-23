@@ -1,0 +1,12 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="com.omar.softit.beans.User" table="users">
+        <id name="id" column="id" access="field">
+            <generator class="increment"></generator>
+        </id>
+        <property name="fullName" column="full_name" access="field"/>
+        <property name="email" access="field"/>
+        <property name="password" access="field"/>
+
+    </class>
+
+</hibernate-mapping>
