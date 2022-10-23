@@ -9,11 +9,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.util.List;
-import java.util.Scanner;
 
 public class UserHibernateDAO implements UserDAO {
     private ServletContext servletContext;
@@ -76,20 +74,20 @@ public class UserHibernateDAO implements UserDAO {
     public List<User> getAll() {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-        List<User> users=(List<User>)session.createQuery("from User").list();
+        List<User> users=(List<User>)session.createQuery(" from User").list();
         session.getTransaction().commit();
         session.close();
         return users;
     }
 
     @Override
-    public User getUserByEmail(String email) {
+    public List<User> getUserByEmail(String email) {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-        User user= (User) session.createQuery("SELECT * from User WHERE email ='"+email+"'",User.class).list().stream().findFirst().get();
+        List<User> users= session.createQuery("from User WHERE email ='"+email+"'",User.class).list();
         session.getTransaction().commit();
         session.close();
-        return user;
+        return users;
     }
 
     @Override

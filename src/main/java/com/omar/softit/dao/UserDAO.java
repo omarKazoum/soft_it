@@ -4,7 +4,6 @@ import com.omar.softit.beans.User;
 import com.omar.softit.utils.NeedsContext;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.List;
 
 public interface UserDAO extends NeedsContext {
@@ -14,5 +13,5 @@ public interface UserDAO extends NeedsContext {
      void update(User user);
      void save(User user);
      List<User> getAll();
-     User getUserByEmail(String email);
+     List<User> getUserByEmail(String email);
 }

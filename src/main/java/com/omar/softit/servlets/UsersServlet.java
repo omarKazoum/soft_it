@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.*;
 
@@ -17,10 +18,16 @@ public class UsersServlet extends HttpServlet {
 
     public void init() {
         message = "Hello World!";
+
     }
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session=request.getSession(false);
+        if(session==null || session.getAttribute("user_mail")==null){
+            response.sendRedirect("login");
+            return ;
+        }
         UserDAO userDAO=UserHibernateDAO.getInstance();
         userDAO.setContext(getServletContext());
         userDAO.prepare();
