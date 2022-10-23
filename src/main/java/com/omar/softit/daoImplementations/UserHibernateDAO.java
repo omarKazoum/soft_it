@@ -83,6 +83,16 @@ public class UserHibernateDAO implements UserDAO {
     }
 
     @Override
+    public User getUserByEmail(String email) {
+        Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        User user= (User) session.createQuery("SELECT * from User WHERE email ='"+email+"'",User.class).list().stream().findFirst().get();
+        session.getTransaction().commit();
+        session.close();
+        return user;
+    }
+
+    @Override
     public void setContext(ServletContext context) {
         servletContext=context;
     }

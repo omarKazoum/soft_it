@@ -1,16 +1,16 @@
 package com.omar.softit.beans;
 
 import jakarta.persistence.*;
-import jdk.jfr.Description;
 
-import javax.management.DescriptorKey;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue()
     long id;
+    @Column(name = "full_name")
     String fullName;
     String email;
     String password;
