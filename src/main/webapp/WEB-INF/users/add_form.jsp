@@ -1,7 +1,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.util.Enumeration" %>
 <%@ page import="jdk.dynalink.linker.LinkerServices" %>
-<%@ page import="com.omar.softit.beans.User" %>
+<%@ page import="com.omar.softit.entities.User" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Youcode

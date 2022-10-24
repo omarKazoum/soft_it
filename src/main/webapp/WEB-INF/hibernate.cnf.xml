@@ -24,7 +24,7 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-        <mapping class="com.omar.softit.beans.User"/>
+        <mapping class="com.omar.softit.entities.User"/>
     </session-factory>
 
 </hibernate-configuration>

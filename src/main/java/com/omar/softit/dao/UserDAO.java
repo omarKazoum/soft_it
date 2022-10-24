@@ -1,6 +1,6 @@
 package com.omar.softit.dao;
 
-import com.omar.softit.beans.User;
+import com.omar.softit.entities.User;
 import com.omar.softit.utils.NeedsContext;
 
 import java.io.IOException;

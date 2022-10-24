@@ -1,6 +1,6 @@
 package com.omar.softit.daoImplementations;
 
-import com.omar.softit.beans.User;
+import com.omar.softit.entities.User;
 import com.omar.softit.dao.UserDAO;
 import jakarta.servlet.ServletContext;
 import org.hibernate.Session;
@@ -23,7 +23,6 @@ public class UserHibernateDAO implements UserDAO {
         }
         return instance;
     }
-
     private UserHibernateDAO() {
     }
 
@@ -56,7 +55,7 @@ public class UserHibernateDAO implements UserDAO {
     public void update(User user) {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-         session.update(user);
+        session.update(user);
         session.getTransaction().commit();
         session.close();
     }
@@ -65,7 +64,7 @@ public class UserHibernateDAO implements UserDAO {
     public void save(User user) {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-         session.save(user);
+        session.save(user);
         session.getTransaction().commit();
         session.close();
     }

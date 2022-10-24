@@ -1,5 +1,6 @@
-package com.omar.softit.beans;
+package com.omar.softit.entities;
 
+import com.omar.softit.utils.PasswordHasher;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -20,7 +21,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = PasswordHasher.hash(password);
     }
 
     @Override
