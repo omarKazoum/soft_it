@@ -29,7 +29,7 @@
     <label for="email">user email:</label>
     <input type="email" name="email" id="email" value="${user_to_edit.email}">
     <label for="password">password:</label>
-    <input type="password" name="password" id="password" value="${user_to_edit.password}">
+    <input type="password" name="password" id="password" value=""placeholder="enter a password to update current password">
 
     <input type="submit" value="save">
 </form>

@@ -18,12 +18,14 @@ import java.util.Optional;
 public class AuthenticationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            if(request.getRequestURI().endsWith("/logout")) {
+
+        if(request.getRequestURI().endsWith("/logout")) {
                 HttpSession session=request.getSession(false);
                 if(session!=null)
                     session.invalidate();
             }
-            getServletContext().getRequestDispatcher("/WEB-INF/auth/login.jsp").forward(request,response);
+            //response.getWriter().write("hello from loin");
+        getServletContext().getRequestDispatcher("/WEB-INF/auth/login.jsp").forward(request,response);
     }
 
     @Override

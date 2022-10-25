@@ -13,17 +13,13 @@
 <html>
 <head>
     <title>Available users</title>
-    <style>
-        td{
-            border: solid black 1px;
-            padding: 15px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="<%= request.getAttribute("app_base_url")%>/style.css">
 </head>
 <body>
-<a href="users?action=add">add <new></new></a>
-<a href="logout">logout <new></new></a>
+<div>
+    <a class="btn" href="users?action=add">add<new></new></a>
+    <a class="btn" href="logout">logout <new></new></a>
+</div>
 
     <table style="border-collapse:collapse">
         <tr>

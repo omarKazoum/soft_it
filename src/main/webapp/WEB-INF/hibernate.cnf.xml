@@ -4,9 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-
     <session-factory>
-
         <!-- Database connection settings -->
         <property name="connection.url">jdbc:mysql://localhost/test?user=root&amp;password=root</property>
 
@@ -21,10 +19,8 @@
 
         <!-- Create the database schema on startup if it's not already there -->
         <property name="hbm2ddl.auto">update</property>
-
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
         <mapping class="com.omar.softit.entities.User"/>
     </session-factory>
-
 </hibernate-configuration>

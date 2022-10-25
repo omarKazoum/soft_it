@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Jee Demo app</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1>Welcome to java ee demo app
 </h1>
 <br/>
-this is great
+    login <a href="./login"> here</a>
 </body>
 </html>

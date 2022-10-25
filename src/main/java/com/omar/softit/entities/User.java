@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Table(name = "users")
 public class User implements Serializable {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
     @Column(name = "full_name")
     String fullName;
@@ -19,7 +19,6 @@ public class User implements Serializable {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = PasswordHasher.hash(password);
     }
